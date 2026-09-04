@@ -2,19 +2,23 @@
 
 #include "Line.h"
 
-
 using namespace std;
-
-//#include <vector>
-
 
 int main() {
 
-	Line<int> lst = *(new Line<int>());
+	Line<int>* lst = new Line<int>();
 
-	lst.add(1);
+	lst->add(1);
 
-	std::cout << lst.toString() << " " << lst[0];
+	for (size_t i = 0; i < 10; i++)
+	{
+		lst->add(i);
+	}
+	lst->to_set();
+
+	for (int v : *lst) {
+		std::cout << v << std::endl;
+	}
 
 
 }

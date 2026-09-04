@@ -25,6 +25,28 @@ private:
         return current <= length / 4;
     }
 
+    class Iterator {
+    private:
+        T* m_ptr;
+
+    public:
+        Iterator(T* ptr) : m_ptr(ptr) {}
+
+        // Dereference operator: returns the value
+        T& operator*() const { return *m_ptr; }
+
+        // Prefix increment operator: moves to next element
+        Iterator& operator++() {
+            m_ptr++;
+            return *this;
+        }
+
+        // Inequality operator: checks loop termination
+        bool operator!=(const Iterator& other) const {
+            return m_ptr != other.m_ptr;
+        }
+    };
+
 public:
 
     Line() {
@@ -74,6 +96,13 @@ public:
                 return true;
         return false;
     }
+
+	static bool iscontain(T* array, int length, T element_to_find) {
+		for (int idx = 0; idx < length; idx++)
+			if (array[idx] == element_to_find)
+				return true;
+		return false;
+	}
 
     void add(T new_element) {
         trim();
@@ -240,21 +269,24 @@ public:
         T* new_array = new T[current];
         int length = 0;
         for (int current_index = 0; current_index < current; current_index++)
-        {
-            if (!this->iscontain(new_array, length, array[current_index])) {
+            if (!this->iscontain(new_array, length, array[current_index])) 
                 new_array[length++] = array[current_index];
-            }
-        }
+            
+        
 
         this->clear();
         current = length;
         array = new T[current];
 
         for (size_t current_index = 0; current_index < length; current_index++)
-        {
             array[current_index] = new_array[current_index];
-        }
+        
+		this->trim();
     }
+
+    Iterator begin() { return Iterator(&array[0]); }
+    Iterator end() { return Iterator(&array[current]); }
+
 };
 
 #endif //LINE_H
