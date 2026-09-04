@@ -14,7 +14,7 @@ int main() {
 
 	lst.add(1);
 
-	std::cout << lst.toString();
+	std::cout << lst.toString() << " " << lst[0];
 
 
 }

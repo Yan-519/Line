@@ -210,10 +210,12 @@ public:
     }
 
     std::string toString() {
-        std::string str = "";
-        for (int idx = 0; idx < current; idx++)
-            str += array[idx] + " ";
-        return str;
+        std::string str = "[";
+        for (int idx = 0; idx < current; idx++) {
+            str += std::to_string(array[idx]);
+            if (idx < current - 1) str += ", ";
+        }
+        return str + "]";
     }
 
     const T* get_array() {
