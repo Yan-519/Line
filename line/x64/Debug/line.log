@@ -1,0 +1,21 @@
+﻿  main.cpp
+C:\Users\rozen\source\repos\Yan-519\Line\line\Line.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'main.cpp')
+  
+C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(16,10): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(16,10): warning C4244:         with
+C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(16,10): warning C4244:         [
+C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(16,10): warning C4244:             T=int
+C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(16,10): warning C4244:         ]
+C:\Users\rozen\source\repos\Yan-519\Line\line\Line.h(31,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\rozen\source\repos\Yan-519\Line\line\Line.h(31,19):
+      the template instantiation context (the oldest one first) is
+          C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(14,12):
+          see reference to class template instantiation 'Line<int>' being compiled
+          C:\Users\rozen\source\repos\Yan-519\Line\line\Line.h(30,5):
+          while compiling class template member function 'Line<int>::Line(void)'
+              C:\Users\rozen\source\repos\Yan-519\Line\line\main.cpp(14,16):
+              see the first reference to 'Line<int>::Line' in 'main'
+  
+  line.vcxproj -> C:\Users\rozen\source\repos\Yan-519\Line\x64\Debug\line.exe
